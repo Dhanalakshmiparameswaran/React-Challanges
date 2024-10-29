@@ -1,17 +1,30 @@
 .container {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    align-items: center;  
-    gap: 10px;  
-    padding: 20px;  
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center; 
   }
   
-  .container > button {
-    flex: 1 1 150px;  
-    margin: 10px; 
+  .container > * {
+    flex: 1 1 auto;
+    max-width: 150px; 
+    min-width: 120px; 
   }
-  .titleTag{
-    font-size: 20px;
+  
+  .titleTag {
     text-align: center;
+    margin-bottom: 20px;
   }
+  
+  @media (max-width: 768px) {
+    .container > * {
+      flex: 1 1 calc(50% - 16px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container > * {
+      flex: 1 1 100%;
+    }
+  }
+  
